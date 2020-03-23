@@ -31,6 +31,9 @@ class NotasActivity : BaseActivity() {
                     )
                     setHasFixedSize(true)
 
+                    adapter = NotasAdapter(notas) {nota ->
+
+                    }
 
                 }
             }
