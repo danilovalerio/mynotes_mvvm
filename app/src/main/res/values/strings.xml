@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Notes MVVM</string>
+    <string name="titulo_minhas_notas">Minhas Notas</string>
 </resources>
