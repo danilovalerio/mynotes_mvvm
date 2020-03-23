@@ -7,6 +7,8 @@ import projetos.danilo.mynotesmvvm.base.BaseActivity
 
 class NotasActivity : BaseActivity() {
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notas)
