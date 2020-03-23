@@ -13,6 +13,11 @@ class NotasViewModel : ViewModel() {
         notasLiveData.value = notas
     }
 
+    //todo: Adicionar nota a partir do que foi informado pelo usuário
+    fun addNota(nota: Nota) {
+        notas.add(nota)
+    }
+
     fun createFakeNotas() {
         notas.add(Nota(1, "Nota 1", "Comprar item 1", null))
         notas.add(Nota(2, "Nota 2", "Comprar item 2", "Com comentário de teste 2"))

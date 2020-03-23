@@ -1,10 +1,14 @@
 package projetos.danilo.mynotesmvvm.ui.notas
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
+import android.view.View.inflate
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_notas.*
+import kotlinx.android.synthetic.main.alert_adicionar_nota.*
 import kotlinx.android.synthetic.main.include_toolbar.toolbarPrincipal
 import projetos.danilo.mynotesmvvm.R
 import projetos.danilo.mynotesmvvm.ui.base.BaseActivity
@@ -21,7 +25,8 @@ class NotasActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notas)
 
-        configurarToolbar(toolbarPrincipal,
+        configurarToolbar(
+            toolbarPrincipal,
             R.string.titulo_minhas_notas
         )
 
@@ -46,10 +51,20 @@ class NotasActivity : BaseActivity() {
 
                             this@NotasActivity.startActivity(intent)
                         }
-
                 }
             }
         })
+
+        val dialogBuilder = AlertDialog.Builder(this).create()
+        val inflater = inflate(this, R.layout.alert_adicionar_nota, null)
+        val dialogView = inflater
+
+        dialogBuilder.setView(dialogView)
+        dialogBuilder.show()
+
+        //todo: Capturar clique do botão
+
+
 
         viewModel.getAllNotas()
     }
