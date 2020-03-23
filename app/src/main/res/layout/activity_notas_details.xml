@@ -24,7 +24,7 @@
         android:layout_marginStart="16dp"/>
 
     <TextView
-        android:id="@+id/tv_notaDetalhe"
+        android:id="@+id/tv_notaDetalheDescricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Descrição 1"

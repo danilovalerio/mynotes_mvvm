@@ -3,6 +3,7 @@ package projetos.danilo.mynotesmvvm.ui.detalhes
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_notas_details.*
 import kotlinx.android.synthetic.main.include_toolbar.*
 import projetos.danilo.mynotesmvvm.R
 import projetos.danilo.mynotesmvvm.ui.base.BaseActivity
@@ -12,7 +13,12 @@ class NotasDetalhesActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notas_details)
 
-        configurarToolbar(toolbarPrincipal, R.string.titulo_detalhe_notas)
+        configurarToolbar(toolbarPrincipal, R.string.titulo_detalhe_notas, true)
+
+        /**valores que vem da intent*/
+        tv_notaDetalheTitulo.text = intent.getStringExtra(EXTRA_TITULO)
+        tv_notaDetalheDescricao.text = intent.getStringExtra(EXTRA_DESCRICAO)
+        tv_notaComentario.text = intent.getStringExtra(EXTRA_COMENTARIO)
     }
 
     /** objeto Nota para essa activity*/

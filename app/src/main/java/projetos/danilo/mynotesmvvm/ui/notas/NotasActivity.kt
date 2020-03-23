@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.activity_notas.*
 import kotlinx.android.synthetic.main.include_toolbar.toolbarPrincipal
 import projetos.danilo.mynotesmvvm.R
 import projetos.danilo.mynotesmvvm.ui.base.BaseActivity
+import projetos.danilo.mynotesmvvm.ui.detalhes.NotasDetalhesActivity
 
 class NotasActivity : BaseActivity() {
     private val viewModel by lazy {
@@ -36,13 +37,20 @@ class NotasActivity : BaseActivity() {
 
                     adapter =
                         NotasAdapter(notas) { nota ->
+                            val intent = NotasDetalhesActivity.getStartIntent(
+                                this@NotasActivity,
+                                nota.titulo,
+                                nota.descricao,
+                                nota.comentario ?: " - "
+                            )
 
+                            this@NotasActivity.startActivity(intent)
                         }
 
                 }
             }
         })
 
-        viewModel.getAllNotas().toString()
+        viewModel.getAllNotas()
     }
 }

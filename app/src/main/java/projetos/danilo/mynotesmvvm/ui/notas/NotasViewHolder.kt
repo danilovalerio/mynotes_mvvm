@@ -12,11 +12,15 @@ class NotasViewHolder(
 ) : RecyclerView.ViewHolder(itemView) {
     val titulo = itemView.tv_tituloNota
     val descricao = itemView.tv_descricaoNota
-    val comentarios = itemView.tv_comentarioNota
+    val comentario = itemView.tv_comentarioNota
 
     fun bindView(nota: Nota){
         titulo.text = nota.titulo
         descricao.text = nota.descricao
-        comentarios.text = nota.comentario
+        comentario.text = nota.comentario
+
+        itemView.setOnClickListener {
+            onItemClickListener.invoke(nota)
+        }
     }
 }
