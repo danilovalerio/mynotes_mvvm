@@ -6,4 +6,5 @@
     <!--  NotasDetalhesActivity  -->
     <string name="titulo_nota">Nota</string>
     <string name="titulo_observacoes">Observações:</string>
+    <string name="titulo_detalhe_notas">Detalhe da Notas</string>
 </resources>
