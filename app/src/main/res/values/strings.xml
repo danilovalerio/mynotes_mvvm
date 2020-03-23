@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">My Notes MVVM</string>
     <string name="titulo_minhas_notas">Minhas Notas</string>
+
+
+    <!--  NotasDetalhesActivity  -->
+    <string name="titulo_nota">Nota</string>
+    <string name="titulo_observacoes">Observações:</string>
 </resources>

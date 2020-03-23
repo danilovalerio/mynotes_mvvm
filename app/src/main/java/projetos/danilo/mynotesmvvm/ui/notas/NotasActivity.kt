@@ -1,25 +1,28 @@
-package projetos.danilo.mynotesmvvm
+package projetos.danilo.mynotesmvvm.ui.notas
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.LinearLayout
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_notas.*
-import kotlinx.android.synthetic.main.include_toolbar.*
 import kotlinx.android.synthetic.main.include_toolbar.toolbarPrincipal
-import projetos.danilo.mynotesmvvm.base.BaseActivity
+import projetos.danilo.mynotesmvvm.R
+import projetos.danilo.mynotesmvvm.ui.base.BaseActivity
 
 class NotasActivity : BaseActivity() {
-    private val viewModel by lazy { provideNotasViewModel(this) }
+    private val viewModel by lazy {
+        provideNotasViewModel(
+            this
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notas)
 
-        configurarToolbar(toolbarPrincipal, R.string.titulo_minhas_notas)
+        configurarToolbar(toolbarPrincipal,
+            R.string.titulo_minhas_notas
+        )
 
         viewModel.notasLiveData.observe(this, Observer {
             it?.let { notas ->
@@ -31,14 +34,15 @@ class NotasActivity : BaseActivity() {
                     )
                     setHasFixedSize(true)
 
-                    adapter = NotasAdapter(notas) {nota ->
+                    adapter =
+                        NotasAdapter(notas) { nota ->
 
-                    }
+                        }
 
                 }
             }
         })
 
-        Log.i("TESTE 1", viewModel.getAllNotas().toString())
+        viewModel.getAllNotas().toString()
     }
 }

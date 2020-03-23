@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotasActivity">
+    tools:context=".ui.notas.NotasActivity">
 
     <include
         android:id="@+id/toolbarPrincipal"
@@ -27,6 +27,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerNotas"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/item_nota" />

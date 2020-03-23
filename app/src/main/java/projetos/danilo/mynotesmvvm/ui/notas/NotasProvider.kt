@@ -1,4 +1,4 @@
-package projetos.danilo.mynotesmvvm
+package projetos.danilo.mynotesmvvm.ui.notas
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders

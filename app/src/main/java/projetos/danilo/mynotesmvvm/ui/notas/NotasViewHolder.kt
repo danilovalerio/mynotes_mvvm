@@ -1,4 +1,4 @@
-package projetos.danilo.mynotesmvvm
+package projetos.danilo.mynotesmvvm.ui.notas
 
 import android.view.View
 import android.widget.AdapterView

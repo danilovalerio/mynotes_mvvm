@@ -1,4 +1,4 @@
-package projetos.danilo.mynotesmvvm.base
+package projetos.danilo.mynotesmvvm.ui.base
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar

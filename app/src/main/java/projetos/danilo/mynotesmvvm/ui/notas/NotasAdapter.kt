@@ -1,8 +1,9 @@
-package projetos.danilo.mynotesmvvm
+package projetos.danilo.mynotesmvvm.ui.notas
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import projetos.danilo.mynotesmvvm.R
 import projetos.danilo.mynotesmvvm.model.Nota
 
 class NotasAdapter(
@@ -16,7 +17,10 @@ class NotasAdapter(
         viewType: Int
     ): NotasViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_nota, parent, false)
-        return NotasViewHolder(itemView, onItemClickListener)
+        return NotasViewHolder(
+            itemView,
+            onItemClickListener
+        )
     }
 
     override fun getItemCount(): Int {

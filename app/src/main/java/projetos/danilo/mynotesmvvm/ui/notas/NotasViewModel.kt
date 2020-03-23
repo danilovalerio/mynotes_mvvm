@@ -1,4 +1,4 @@
-package projetos.danilo.mynotesmvvm
+package projetos.danilo.mynotesmvvm.ui.notas
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
