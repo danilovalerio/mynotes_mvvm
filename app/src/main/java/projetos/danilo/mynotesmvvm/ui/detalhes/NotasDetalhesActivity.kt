@@ -36,6 +36,5 @@ class NotasDetalhesActivity : BaseActivity() {
 
             return intent
         }
-
     }
 }

@@ -5,17 +5,20 @@ import androidx.lifecycle.ViewModel
 import projetos.danilo.mynotesmvvm.model.Nota
 
 class NotasViewModel : ViewModel() {
-    val notas: MutableList<Nota> = mutableListOf()
+    var notas: MutableList<Nota> = mutableListOf()
     val notasLiveData: MutableLiveData<List<Nota>> = MutableLiveData()
 
     fun getAllNotas() {
-        createFakeNotas()
+        if(notas.size == 0){
+            createFakeNotas()
+        }
         notasLiveData.value = notas
     }
 
     //todo: Adicionar nota a partir do que foi informado pelo usuário
     fun addNota(nota: Nota) {
         notas.add(nota)
+        notasLiveData.value = notas
     }
 
     fun createFakeNotas() {

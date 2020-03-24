@@ -1,17 +1,17 @@
 package projetos.danilo.mynotesmvvm.ui.notas
 
-import android.app.AlertDialog
-import android.content.DialogInterface
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View.inflate
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_notas.*
-import kotlinx.android.synthetic.main.alert_adicionar_nota.*
 import kotlinx.android.synthetic.main.include_toolbar.toolbarPrincipal
 import projetos.danilo.mynotesmvvm.R
+import projetos.danilo.mynotesmvvm.model.Nota
+import projetos.danilo.mynotesmvvm.ui.addNotas.AdicionarNotasActivity
+import projetos.danilo.mynotesmvvm.ui.addNotas.AdicionarNotasActivity.Companion.EXTRA_TITULO
 import projetos.danilo.mynotesmvvm.ui.base.BaseActivity
 import projetos.danilo.mynotesmvvm.ui.detalhes.NotasDetalhesActivity
 
@@ -21,6 +21,8 @@ class NotasActivity : BaseActivity() {
             this
         )
     }
+
+    val ACTIVITY_ADICIONAR_NOTA_REQUEST = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,26 +58,23 @@ class NotasActivity : BaseActivity() {
             }
         })
 
-        val dialogBuilder = AlertDialog.Builder(this)
-        dialogBuilder.setPositiveButton(R.string.texto_botao_adicionar, DialogInterface.OnClickListener{ dialog, id ->
-            Log.i("LOG_BOTAO", "Clicou no botão POSITIVO")
-        })
-        dialogBuilder.setNegativeButton(R.string.texto_botao_cancelar, DialogInterface.OnClickListener{ dialog, id ->
-            Log.i("LOG_BOTAO", "Clicou no botão NEGATIVO")
-        })
-
-        val inflater = inflate(this, R.layout.alert_adicionar_nota, null)
-        val dialogView = inflater
-
-        dialogBuilder.setView(dialogView)
-
-
         //todo: Capturar clique do botão
         btn_adicionar_nota.setOnClickListener {
-            dialogBuilder.show()
+            val intent = Intent(this, AdicionarNotasActivity::class.java)
+            startActivityForResult(intent, ACTIVITY_ADICIONAR_NOTA_REQUEST)
         }
 
-
         viewModel.getAllNotas()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == ACTIVITY_ADICIONAR_NOTA_REQUEST){
+            if (resultCode == Activity.RESULT_OK){
+                val resultado = data?.getStringExtra(EXTRA_TITULO) ?: "-"
+                val notaNova = Nota(1, resultado, "nota criada")
+                viewModel.addNota(notaNova)
+            }
+        }
     }
 }

@@ -20,6 +20,9 @@
         <activity android:name=".ui.detalhes.NotasDetalhesActivity"
             android:parentActivityName=".ui.notas.NotasActivity"/>
 
+        <activity android:name=".ui.addNotas.AdicionarNotasActivity"
+            android:parentActivityName=".ui.notas.NotasActivity"/>
+
     </application>
 
 </manifest>
