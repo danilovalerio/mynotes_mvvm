@@ -47,5 +47,15 @@
 
     </ViewFlipper>
 
+    <Button
+        android:id="@+id/btn_adicionar_nota"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_botao_adicionar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

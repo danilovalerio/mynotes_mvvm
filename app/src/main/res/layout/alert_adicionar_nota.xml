@@ -32,25 +32,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <Button
-        android:id="@+id/btn_adicionar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/texto_botao_adicionar"
-        app:layout_constraintTop_toBottomOf="@+id/et_tituloNota"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+<!--    <Button-->
+<!--        android:id="@+id/btn_adicionar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="8dp"-->
+<!--        android:text="@string/texto_botao_adicionar"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/et_tituloNota"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"/>-->
 
-    <Button
-        android:id="@+id/btn_cancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/texto_botao_cancelar"
-        app:layout_constraintTop_toBottomOf="@+id/et_tituloNota"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_adicionar"/>
+<!--    <Button-->
+<!--        android:id="@+id/btn_cancelar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="8dp"-->
+<!--        android:text="@string/texto_botao_cancelar"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/et_tituloNota"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@id/btn_adicionar"/>-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

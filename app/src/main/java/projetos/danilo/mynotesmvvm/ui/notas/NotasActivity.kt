@@ -1,6 +1,7 @@
 package projetos.danilo.mynotesmvvm.ui.notas
 
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.View.inflate
@@ -55,15 +56,24 @@ class NotasActivity : BaseActivity() {
             }
         })
 
-        val dialogBuilder = AlertDialog.Builder(this).create()
+        val dialogBuilder = AlertDialog.Builder(this)
+        dialogBuilder.setPositiveButton(R.string.texto_botao_adicionar, DialogInterface.OnClickListener{ dialog, id ->
+            Log.i("LOG_BOTAO", "Clicou no botão POSITIVO")
+        })
+        dialogBuilder.setNegativeButton(R.string.texto_botao_cancelar, DialogInterface.OnClickListener{ dialog, id ->
+            Log.i("LOG_BOTAO", "Clicou no botão NEGATIVO")
+        })
+
         val inflater = inflate(this, R.layout.alert_adicionar_nota, null)
         val dialogView = inflater
 
         dialogBuilder.setView(dialogView)
-        dialogBuilder.show()
+
 
         //todo: Capturar clique do botão
-
+        btn_adicionar_nota.setOnClickListener {
+            dialogBuilder.show()
+        }
 
 
         viewModel.getAllNotas()
