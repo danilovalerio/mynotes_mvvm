@@ -1,7 +1,7 @@
-package projetos.danilo.mynotesmvvm.model
+package projetos.danilo.mynotesmvvm.data.model
 
 data class Nota (
-    val id: Int,
+    val id: Long,
     val titulo: String,
     val descricao: String,
     val comentario: String? = "-"

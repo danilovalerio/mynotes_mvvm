@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import projetos.danilo.mynotesmvvm.R
-import projetos.danilo.mynotesmvvm.model.Nota
+import projetos.danilo.mynotesmvvm.data.model.Nota
 
 class NotasAdapter(
     val notas: List<Nota>,

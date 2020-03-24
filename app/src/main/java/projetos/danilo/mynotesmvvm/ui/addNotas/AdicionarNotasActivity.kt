@@ -7,7 +7,7 @@ import android.util.Log
 import kotlinx.android.synthetic.main.activity_adicionar_notas.*
 import kotlinx.android.synthetic.main.include_toolbar.*
 import projetos.danilo.mynotesmvvm.R
-import projetos.danilo.mynotesmvvm.model.Nota
+import projetos.danilo.mynotesmvvm.data.model.Nota
 import projetos.danilo.mynotesmvvm.ui.base.BaseActivity
 
 class AdicionarNotasActivity : BaseActivity() {

@@ -1,10 +1,9 @@
 package projetos.danilo.mynotesmvvm.ui.notas
 
 import android.view.View
-import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_nota.view.*
-import projetos.danilo.mynotesmvvm.model.Nota
+import projetos.danilo.mynotesmvvm.data.model.Nota
 
 class NotasViewHolder(
     itemView: View,

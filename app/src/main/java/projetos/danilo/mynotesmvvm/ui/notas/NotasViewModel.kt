@@ -2,7 +2,7 @@ package projetos.danilo.mynotesmvvm.ui.notas
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import projetos.danilo.mynotesmvvm.model.Nota
+import projetos.danilo.mynotesmvvm.data.model.Nota
 
 class NotasViewModel : ViewModel() {
     var notas: MutableList<Nota> = mutableListOf()

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_notas.*
 import kotlinx.android.synthetic.main.include_toolbar.toolbarPrincipal
 import projetos.danilo.mynotesmvvm.R
-import projetos.danilo.mynotesmvvm.model.Nota
+import projetos.danilo.mynotesmvvm.data.model.Nota
 import projetos.danilo.mynotesmvvm.ui.addNotas.AdicionarNotasActivity
 import projetos.danilo.mynotesmvvm.ui.addNotas.AdicionarNotasActivity.Companion.EXTRA_TITULO
 import projetos.danilo.mynotesmvvm.ui.base.BaseActivity
