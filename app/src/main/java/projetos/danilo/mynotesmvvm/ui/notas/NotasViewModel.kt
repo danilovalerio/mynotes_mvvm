@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import projetos.danilo.mynotesmvvm.data.model.Nota
 
 class NotasViewModel : ViewModel() {
+
     var notas: MutableList<Nota> = mutableListOf()
     val notasLiveData: MutableLiveData<List<Nota>> = MutableLiveData()
 
