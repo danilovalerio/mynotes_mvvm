@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_notas.*
 import kotlinx.android.synthetic.main.include_toolbar.toolbarPrincipal
 import projetos.danilo.mynotesmvvm.R
 import projetos.danilo.mynotesmvvm.data.model.Nota
+import projetos.danilo.mynotesmvvm.data.repository.sqlite.SQLiteRepository
 import projetos.danilo.mynotesmvvm.ui.addNotas.AdicionarNotasActivity
 import projetos.danilo.mynotesmvvm.ui.addNotas.AdicionarNotasActivity.Companion.EXTRA_TITULO
 import projetos.danilo.mynotesmvvm.ui.base.BaseActivity
@@ -21,6 +22,8 @@ class NotasActivity : BaseActivity() {
             this
         )
     }
+
+    var database = SQLiteRepository(this)
 
     val ACTIVITY_ADICIONAR_NOTA_REQUEST = 1
 
@@ -73,7 +76,9 @@ class NotasActivity : BaseActivity() {
             if (resultCode == Activity.RESULT_OK){
                 val resultado = data?.getStringExtra(EXTRA_TITULO) ?: "-"
                 val notaNova = Nota(1, resultado, "nota criada")
-                viewModel.addNota(notaNova)
+
+                database.save(notaNova)
+//                viewModel.addNota(notaNova)
             }
         }
     }
