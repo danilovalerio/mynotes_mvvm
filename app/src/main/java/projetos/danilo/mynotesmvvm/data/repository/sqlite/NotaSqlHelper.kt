@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import projetos.danilo.mynotesmvvm.data.repository.*
 
-class HotelSqlHelper(ctx: Context) :
+class NotaSqlHelper(ctx: Context) :
     SQLiteOpenHelper(ctx, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(sqLiteDatabase: SQLiteDatabase?) {
         sqLiteDatabase?.execSQL(
