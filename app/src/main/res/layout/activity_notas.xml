@@ -14,6 +14,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/ic_add_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
     <!--  Exibe o 1 filho dele por padrão  -->
     <ViewFlipper
         android:id="@+id/viewFlipperBooks"
@@ -47,15 +58,14 @@
 
     </ViewFlipper>
 
-    <Button
-        android:id="@+id/btn_adicionar_nota"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/texto_botao_adicionar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"/>
-
+    <!--    <Button-->
+<!--        android:id="@+id/btn_adicionar_nota"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/texto_botao_adicionar"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:gravity="center"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package projetos.danilo.mynotesmvvm.ui.notas
 
 import android.content.Context
+import android.os.AsyncTask
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import projetos.danilo.mynotesmvvm.data.model.Nota
@@ -27,6 +28,8 @@ class NotasViewModel : ViewModel() {
         notasLiveData.value = database.getAllNotas()
     }
 
+
+    //todo: Remover quando concluir
 //    fun createFakeNotas() {
 //        notas.add(Nota(1, "Nota 1", "Comprar item 1", null))
 //        notas.add(Nota(2, "Nota 2", "Comprar item 2", "Com comentário de teste 2"))

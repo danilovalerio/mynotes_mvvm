@@ -19,13 +19,14 @@ class AdicionarNotasActivity : BaseActivity() {
         configurarToolbar(toolbarPrincipal, R.string.titulo_adicao, true)
 
         btn_adicionar.setOnClickListener {
-            Log.i("BOTAO", "clique no botao adicionar")
-            val notaNova = Nota(1, et_tituloNota.text.toString(), "nota criada")
-
             val returnIntent = Intent()
             returnIntent.putExtra(EXTRA_TITULO, et_tituloNota.text.toString())
             setResult(Activity.RESULT_OK, returnIntent)
 
+            finish()
+        }
+
+        btn_cancelar.setOnClickListener {
             finish()
         }
 

@@ -58,7 +58,7 @@ class NotasActivity : BaseActivity() {
         })
 
         //todo: Capturar clique do botão
-        btn_adicionar_nota.setOnClickListener {
+        floatingActionButton.setOnClickListener {
             val intent = Intent(this, AdicionarNotasActivity::class.java)
             startActivityForResult(intent, ACTIVITY_ADICIONAR_NOTA_REQUEST)
         }
