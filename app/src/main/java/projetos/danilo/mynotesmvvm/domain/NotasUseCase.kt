@@ -18,4 +18,8 @@ class NotasUseCase {
     fun adicionarNota(nota: Nota) {
         database.save(nota)
     }
+
+    fun buscarNotaPorTitulo(termo: String){
+        database.search(termo)
+    }
 }
