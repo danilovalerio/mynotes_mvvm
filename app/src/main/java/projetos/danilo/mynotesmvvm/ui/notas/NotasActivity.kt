@@ -63,7 +63,7 @@ class NotasActivity : BaseActivity() {
             startActivityForResult(intent, ACTIVITY_ADICIONAR_NOTA_REQUEST)
         }
 
-        viewModel.getAllNotas()
+        viewModel.getListaNotas()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -73,7 +73,7 @@ class NotasActivity : BaseActivity() {
                 val resultado = data?.getStringExtra(EXTRA_TITULO) ?: "-"
                 val notaNova = Nota(0, resultado, "nota criada")
 
-                viewModel.addNota(notaNova)
+                viewModel.adicionarNota(notaNova)
             }
         }
     }

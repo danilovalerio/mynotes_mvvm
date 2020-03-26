@@ -6,28 +6,30 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import projetos.danilo.mynotesmvvm.data.model.Nota
 import projetos.danilo.mynotesmvvm.data.repository.sqlite.SQLiteRepository
+import projetos.danilo.mynotesmvvm.domain.NotasUseCase
 
 class NotasViewModel : ViewModel() {
 
-    lateinit var database: SQLiteRepository
-
-//    var notas: MutableList<Nota> = mutableListOf()
+    val notasUseCase = NotasUseCase()
     val notasLiveData: MutableLiveData<List<Nota>> = MutableLiveData()
 
     fun initDatabase(ctx: Context){
-        database = SQLiteRepository(ctx)
+        notasUseCase.initDatabase(ctx)
     }
 
-    fun getAllNotas() {
-        notasLiveData.value = database.getAllNotas()
+    //Podemos usar couroutines para solicitar informação assíncrona (Async)
+    fun getListaNotas(){
+        setListaNotas(notasUseCase.obterListaDeNotas())
     }
 
-    //todo: Adicionar nota a partir do que foi informado pelo usuário
-    fun addNota(nota: Nota) {
-        database.save(nota)
-        notasLiveData.value = database.getAllNotas()
+    fun setListaNotas(listaNotas:List<Nota>){
+        notasLiveData.value = listaNotas
     }
 
+    fun adicionarNota(nota: Nota){
+        notasUseCase.adicionarNota(nota)
+        getListaNotas()
+    }
 
     //todo: Remover quando concluir
 //    fun createFakeNotas() {
